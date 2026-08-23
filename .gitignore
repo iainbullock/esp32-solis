@@ -1,0 +1,28 @@
+# ESPHome and local build output
+.esphome/
+*.bin
+*.elf
+*.map
+*.ota
+build/
+
+# Secrets and local configuration
+secrets.yaml
+secrets.yml
+.env
+.env.*
+!.env.example
+*.local.yaml
+*.local.yml
+
+# Local development
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Logs and personal data exports
+*.log
+data/
+exports/
