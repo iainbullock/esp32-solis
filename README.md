@@ -4,6 +4,8 @@ An ESPHome-based project for integrating a Solis inverter with a household energ
 
 The project is being developed around a real home-energy installation and is currently experimental. Interfaces, assumptions, and configuration details may change while the model is validated against collected data.
 
+<a href="https://www.buymeacoffee.com/iainbullock" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
+
 ## Goals
 
 - Forecast household load and PV generation.
@@ -15,6 +17,24 @@ The project is being developed around a real home-energy installation and is cur
 ## Project status
 
 Early development. The energy model is being validated using measured data before this repository is considered a stable release.
+
+## Axle Energy VPP support
+
+The project supports participation in Axle Energy Virtual Power Plant (VPP) export events using a Solis inverter and battery.
+
+Current support includes:
+
+- Retrieving the available event schedule from the Axle API.
+- Automatically preparing the inverter and exporting during an event.
+- Handling consecutive events as the Axle API moves from the current event to the next one.
+
+Planned work includes:
+
+- Integrating event energy requirements more fully into the rolling load, PV, and battery state-of-charge model.
+- Packaging the Axle handling as documented, reusable configuration.
+- Improving diagnostics, safeguards, and recovery when event or API data is incomplete or unavailable.
+
+If you are considering joining Axle Energy, you can use my [Axle Energy referral link](https://vpp.axle.energy/landing?ref=R-YATGSROZ).
 
 ## Repository layout
 
