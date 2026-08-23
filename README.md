@@ -36,6 +36,26 @@ Planned work includes:
 
 If you are considering joining Axle Energy, you can use my [Axle Energy referral link](https://vpp.axle.energy/landing?ref=R-YATGSROZ).
 
+## Hardware and Modbus interface
+
+The project uses an ESP32 running ESPHome to interface with a Solis inverter over an RS485 serial connection using Modbus.
+
+The hardware and interface are installation-specific. The exact ESP32 board, RS485 transceiver, wiring, serial settings, Modbus device address, register map, and supported read/write operations will be documented as the project is generalised for other installations.
+
+At a high level, the interface consists of:
+
+- An ESP32 controller running ESPHome.
+- An RS485 physical interface connected to the inverter's Modbus port.
+- Modbus sensors and controls exposing the inverter, battery, grid, and PV data needed by the energy model.
+- The energy-model component, which uses those values to forecast operation and support control decisions.
+
+The project documentation will distinguish between:
+
+- Measurements read from the inverter.
+- Values calculated by the ESP32 energy model.
+- Commands written to the inverter.
+- Site-specific settings that must not be copied without review.
+
 ## Repository layout
 
 - `components/energy_model/` — reusable ESPHome energy-model component.
